@@ -1,0 +1,1818 @@
+@import 'base'
+
+@media screen and (min-width:1200px)
+  .container
+    max-width: 968px
+
+$active-color: #ff9d00
+$bg-color-light: #f4f4f4
+
+body
+  font-family: 'Roboto', sans-serif
+  line-height: 1
+
+img
+  max-width: 100%
+
+.menu-bg
+  background-color: #373737
+
+.menu
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 44px
+  &-contacts
+    padding-bottom: 15px
+    padding-top: 15px
+  &-link
+    text-decoration: none
+    color: #ffffff
+    font-size: 12px
+    line-height: 22px
+    text-transform: uppercase
+  &-link:hover
+    cursor: pointer
+    text-decoration: none
+    color: #b5b5b5
+  &-item
+    border-right: 1px dashed rgba(255,255,255,0.2)
+    padding-right: 15px
+    padding-left: 15px
+    &:last-child
+      border-right: none
+    &:first-child
+      padding-left: 0
+
+.menu-mob
+  display: none
+
+.menu-burger
+  display: none
+
+.menu-bg
+  position: sticky
+  top: 0
+  z-index: 5
+
+.contacts-col
+  display: flex
+  justify-content: flex-end
+  align-items: center
+// Логотип
+.header-logo
+  background: url(../img/logo.png) center no-repeat
+  background-size: 100%
+  width: 191px
+  height: 61px
+
+.header-contacts
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  &__button-mobile
+    display: inline-block
+    vertical-align: middle
+    margin: 0
+    padding: 0
+    &:before
+      content: ""
+      display: block
+      width: 20px
+      height: 20px
+      background: url(../img/icon1.png) center no-repeat
+  &-text
+    display: inline-block
+    vertical-align: middle
+    margin: 0
+    padding: 0
+    margin-left: 5px
+    padding-top: 2px
+    color: #ffffff
+    font-family: 'Roboto Medium'
+    font-size: 14px
+    line-height: 22px
+
+.button
+  background-color: #ff9d00
+  padding-top: 13px
+  padding-left: 18px
+  padding-bottom: 12px
+  margin-left: 13px
+  border-radius: 5px
+  border: 1px solid transparent
+  color: #ffffff
+  font-size: 14px
+  font-family: 'Roboto Medium'
+  line-height: 22px
+  padding-right: 22px
+  &-big
+    margin-left: 6px
+    padding-top: 14px
+    padding-bottom: 16px
+    padding-left: 20px
+    font-family: 'Roboto'
+    font-size: 15px
+  img
+    width: 20px
+    height: 20px
+    margin-right: 7px
+    vertical-align: middle
+  &:hover
+    background-color: #e5c333
+    cursor: pointer
+    opacity: 0.95
+  &-o
+    background-color: transparent
+    color: #373737
+    border: 1px solid rgba(#373737, 0.6)
+    &:hover
+      background-color: #775d5d
+      opacity: 0.8
+
+.contact-phone
+  padding-right: 13px
+  padding-left: 13px
+  border-right: 1px solid #cfcfd0
+  &s
+    display: flex
+  &:nth-child(2)
+    border: none
+  a
+    text-decoration: none
+    color: #373737
+    font-size: 22px
+    font-family: 'Roboto Medium'
+    line-height: 22px
+    text-transform: uppercase
+    &:hover
+      cursor: pointer
+      text-decoration: none
+      opacity: 0.8
+    &:visited
+      opacity: 0.5
+
+// Основная секция 
+.main
+  position: relative
+  padding-top: 65px
+  padding-bottom: 75px
+  background: url(../img/bg1.png) center no-repeat
+  background-size: cover
+  color: #ffffff
+  z-index: 1
+  &-text-title
+    margin: 0
+    margin-bottom: 5px
+    font-family: 'Roboto Bold'
+    font-size: 41px
+    line-height: 42px
+  &-text-subtitle
+    margin: 0
+    margin-bottom: 20px
+    font-size: 28px
+  &-text-form
+    width: 535px
+    height: 240px
+    padding-top: 22px
+    padding-left: 27px
+    background-color: rgba(255,255,255,0.2)
+    border-radius: 3px
+  // Затемнение бэкграунда
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,0.6)
+    z-index: 0
+  &-img
+    position: relative
+    margin-left: -105px
+    &::before
+      content: ''
+      position: absolute
+      z-index: -1
+      width: 390px
+      height: 390px
+      margin-top: 15px
+      margin-left: 96px
+      border: 1px solid #ffffff
+      border-radius: 50%
+    &::after
+      content: url(../img/logo2.png)
+      position: absolute
+      bottom: -17px
+      left: 95px
+
+.form
+  margin-top: 16px
+  margin-bottom: 5px
+  &-title
+    padding-right: 30px
+    font-size: 20px
+    line-height: 30px
+    font-family: "Roboto Light"
+    &-important
+      font-family: "Roboto Bold"
+      text-transform: uppercase
+  &-small
+    margin-left: 19px
+    font-size: 14px
+    line-height: 30px
+  &-input
+    width: 311px
+    padding: 17px
+    padding-bottom: 18px
+    border-radius: 4px
+    color: #373737
+    font-size: 14px
+// Модальное окно
+.overlay
+  position: fixed
+  display: none
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: 3
+  background-color: rgba(0,0,0,0.4)
+  .popup
+    position: fixed
+    left: 50%
+    top: 100px
+    width: 752px
+    transform: translateX(-50%)
+    &-close
+      position: absolute
+      right: -20px
+      top: -35px
+      font-size: 35px
+      font-family: 'Roboto Light'
+      color: #ffffff
+      cursor: pointer
+    &-title
+      display: block
+      margin: 0
+      width: 100%
+      min-height: 71px
+      background-color: #ff9d00
+      color: #ffffff
+      text-align: center
+      font-size: 21px
+      line-height: 71px
+      text-transform: uppercase
+    &-form
+      background: url(../img/modal-bg.png) 0 0 no-repeat
+      background-size: cover
+      padding: 35px 88px 50px 88px
+      color: #ffffff
+      &-header
+        padding: 0
+        color: #ffffff
+        font-size: 30px
+        line-height: 27px
+        text-align: center
+        span
+          font-size: 24px
+      &__label
+        display: block
+        margin: 0
+        margin-top: 15px
+        font-size: 20px
+        font-family: 'Roboto Light'
+      &__note
+        font-family: 'Roboto Light'
+        margin-top: 5px
+        font-size: 14px
+      &__input
+        width: 365px
+        height: 56px
+        margin-top: 17px
+        padding-left: 18px
+        border-radius: 5px
+        font-size: 14px
+        font-family: 'Roboto Light'
+        color: #373737
+      &__btn
+        width: 180px
+        height: 56px
+        margin: 0
+        padding: 0
+        margin-left: 10px
+        background-color: #ff9d00
+        font-size: 15px
+        font-family: 'Roboto'
+.overlay-post
+  position: fixed
+  display: none
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: 3
+  background-color: rgba(0,0,0,0.4)
+  .popup
+    position: fixed
+    left: 50%
+    top: 100px
+    width: 80%
+    transform: translateX(-50%)
+    &-close
+      position: absolute
+      right: -20px
+      top: -35px
+      font-size: 35px
+      font-family: 'Roboto Light'
+      color: #ffffff
+      cursor: pointer
+    &-title
+      display: block
+      margin: 0
+      width: 100%
+      min-height: 71px
+      background-color: #ff9d00
+      color: #ffffff
+      text-align: center
+      font-size: 21px
+      line-height: 71px
+      text-transform: uppercase
+    &-form
+      background: url(../img/modal-bg.png) 0 0 no-repeat
+      background-size: cover
+      padding: 35px 88px 50px 88px
+      color: #ffffff
+      &-header
+        padding: 0
+        color: #ffffff
+        font-size: 30px
+        line-height: 27px
+        text-align: center
+
+// Преимущества
+.features
+  background-color: $bg-color-light
+  padding-top: 45px
+  padding-bottom: 50px
+  &-blocks
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  &-block
+    display: flex
+    flex-basis: 31%
+    margin-bottom: 25px
+    padding-top: 25px
+    padding-bottom: 25px
+    padding-left: 10px
+    padding-right: 15px
+    background-color: #ffffff
+    &__title
+      margin-bottom: 5px
+      color: #373737
+      font-size: 15px
+      line-height: 19px
+      font-family: 'Roboto Bold'
+    &__descr
+      color: #373737
+      font-size: 14px
+      line-height: 19px
+      font-family: 'Roboto light'
+    &__img
+      display: flex
+      flex-basis: 50%
+      align-items: center
+      margin-right: 8px
+
+.numbers
+  margin-bottom: 35px
+  &-block
+    display: inline-block
+    width: 30%
+    margin-left: 1%
+    text-align: center
+    vertical-align: top
+    &:nth-child(n+2)
+      margin-left: 4%
+    &__title
+      margin-bottom: 10px
+      color: #f39003
+      font-family: 'Roboto Black'
+      font-size: 36px
+      sup
+        font-size: 20px
+    &__text
+      color: #373737
+      font-family: Roboto
+      font-size: 16px
+      line-height: 20px
+
+.products
+  padding-top: 55px
+  padding-bottom: 70px
+  &-block
+    text-align: center
+    margin-bottom: 30px
+    &__title
+      margin-top: 20px
+      margin-bottom: 25px
+      text-align: center
+      color: #313131
+      font-family: 'Roboto Medium'
+      font-size: 20px
+      line-height: 19px
+
+.section-title
+  margin-bottom: 30px
+  text-align: center
+  color: #313131
+  font-family: Roboto Bold
+  font-size: 27px
+  line-height: 18px
+  text-transform: uppercase
+  &::after
+    content: ''
+    display: block
+    margin-top: 17px
+    height: 6px
+    background: url(../img/line.png) center no-repeat
+
+//ОФФЕР
+.offer
+  position: relative
+  padding-top: 64px
+  padding-bottom: 55px
+  color: $bg-color-light
+  z-index: 2
+  background: grey url(../img/offer-bg.png) 0 0 no-repeat
+  background-size: cover
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,0.6)
+    z-index: -1
+  &-title
+    text-align: center
+    color: #ffffff
+    font-family: Roboto
+    font-size: 32px
+    line-height: 37px
+  &-subtitle
+    font-size: 26px
+  &-form
+    width: 70%
+    margin: auto
+    text-align: center
+    &-label
+      display: block
+      text-align: center
+      font-size: 20px
+      font-family: 'Roboto Light'
+      line-height: 30px
+    .form-input
+      margin: auto
+      text-align: center
+      width: 55%
+      min-width: 300px
+    .button
+      display: block
+      width: 30%
+      min-width: 160px
+      margin: auto
+      margin-top: 10px
+    small
+      display: block
+      margin-top: 10px
+      text-align: center
+      font-size: 14px
+      font-family: 'Roboto Light'
+      line-height: 30px
+//КЛИЕНТЫ
+.clients
+  padding-bottom: 25px
+.clients-block
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 212px
+  height: 130px
+  border: 1px solid rgba(0,0,0,0.1)
+  margin-bottom: 33px
+  img
+    filter: grayscale(100%)
+    &:hover
+      filter: grayscale(0%)
+      cursor: pointer
+
+// ПРОДУКЦИЯ
+.production
+  padding-top: 87px
+  padding-bottom: 90px
+  &-text
+    padding: 0
+    padding-left: 5px
+    padding-right: 10px
+  &-text__title
+    margin-top: 19px
+    margin-left: -20px
+    padding-top: 20px
+    padding-left: 29px
+    padding-bottom: 20px
+    background-color: $active-color
+    color: #ffffff
+    font-family: Roboto
+    font-size: 28px
+    line-height: 22px
+  &-text__descr
+    margin-top: 15px
+    text-align: justify
+    color: #373737
+    font-family: Roboto Light
+    font-size: 16px
+    line-height: 24px
+  &-slider
+    &-top
+      height: 350px
+      overflow-y: hidden
+    &-bottom
+      margin-top: 10px
+      padding-left: 23px
+      padding-right: 23px
+      img
+        outline: none
+        height: 80px
+        margin-left: 3px
+        margin-right: 3px
+        filter: brightness(0.5)
+.ln-hg
+  padding-top: 6px
+// ОТЗЫВЫ
+.feedback
+  padding-top: 55px
+  padding-bottom: 66px
+  background-color: $bg-color-light
+  &-slider
+    padding-left: 23px
+    padding-right: 23px
+    &__item
+      width: 274px
+      height: 377px
+      margin-right: 10px
+      margin-left: 10px
+      border: 1px solid rgba(0, 0, 0, 0.1)
+      border-radius: 5px
+      background-color: #ffffff
+      outline: none
+      img
+        outline: none
+    &-arrow
+      position: absolute
+      top: 0
+      height: 100%
+      width: 22px
+      z-index: 2
+      &-right
+        background: url(../img/feedback/feedback-arrow-right.png) center no-repeat
+        right: 0
+        &:hover
+          cursor: pointer
+      &-left
+        background: url(../img/feedback/feedback-arrow-left.png) center no-repeat
+        left: 0
+        &:hover
+          cursor: pointer
+// СЛАЙДЕРЫ
+.slick-current.slick-active
+  filter: none
+
+.slider-arrow
+  position: absolute
+  top: 0
+  height: 100%
+  width: 22px
+  border: 1px solid $active-color
+  z-index: 2
+  &-right
+    background: #fff url(../img/arrow-right.png) center no-repeat
+    right: 0
+    &:hover
+      cursor: pointer
+      background: $active-color url(../img/arrow-right-active.png) center no-repeat
+  &-left
+    background: #fff url(../img/arrow-left.png) center no-repeat
+    left: 0
+    &:hover
+      cursor: pointer
+      background: $active-color url(../img/arrow-left-active.png) center no-repeat
+  
+// КОНТАКТЫ
+.contacts
+  position: relative
+  &-block
+    position: absolute
+    top: 10%
+    background-color: #fff
+    padding-top: 33px
+    padding-bottom: 10px
+    padding-left: 60px
+    padding-right: 34px
+    color: #373737
+    font-family: 'Roboto Light'
+    font-size: 16px
+    line-height: 18px
+    a
+      color: #373737
+    &__cta
+      button
+        margin-left: 0
+        padding-top: 10px
+        padding-bottom: 10px
+        padding-left: 25px
+    &__title
+      display: block
+      font-family: Roboto
+      font-size: 18px
+      margin-top: 5px
+      margin-bottom: 8px
+    &__adress:before
+      content: url(../img/map1.png)
+      position: absolute
+      margin-left: -25px
+      margin-top: 2px
+    &__phone:before
+      content: url(../img/map2.png)
+      position: absolute
+      margin-left: -25px
+      margin-top: 2px
+    &__mail:before
+      content: url(../img/map3.png)
+      position: absolute
+      margin-left: -25px
+      margin-top: 2px
+    &__text
+      margin-bottom: 25px
+.contacts-block-mobile
+  display: none
+//КАРТА
+.map
+  height: 550px
+
+.footer
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 88px
+  background-color: #1b1b1b
+  &-text
+    margin: 0
+    padding: 0
+    opacity: 0.5
+    color: #ffffff
+    font-family: 'Roboto Light'
+    font-size: 13px
+    line-height: 17px
+// АНИМАЦИЯ
+@keyframes move
+  from
+    opacity: 0
+    transform: translateY(150px) scaleX(-1)
+  to
+    opacity: 1
+    transform: translateY() scaleX()
+
+.animation
+  animation-name: move
+  animation-delay: 0.4s
+  animation-duration: 1s
+
+// АДАПТИВ МОБИЛЬНОГО ЭКРАНА
+@media screen and (max-width:576px)
+  .menu
+    transition: all 1s
+    display: none
+    width: 295px
+    height: 100%
+    margin: auto
+    padding-top: 5px
+    &-contacts
+      padding-bottom: 15px
+      padding-top: 15px
+    &-item
+      padding-right: 20px
+      padding-left: 20px
+      margin-bottom: 5px
+      font-size: 26px
+      &:nth-child(2n)
+        border-right: none
+      &:nth-child(1)
+        margin-left: 50px
+        padding-right: 20px
+      &:nth-child(3)
+        margin-left: -19px
+        padding-left: 0
+        padding-right: 17px
+      &:nth-child(5)
+        margin-left: 38px
+        padding-right: 17px
+      &:nth-child(7)
+        margin-left: -23px
+        padding-right: 17px
+  .menu-mobile
+    display: flex
+    animation-name: move
+    animation-duration: 1s
+  .burger-div
+    position: fixed
+    top: 10px
+    margin-left: 10px
+    z-index: 10
+  .menu-burger
+    display: inline-block
+    width: 35px
+    height: 35px
+    padding-top: 15px
+    span, span:before, span:after
+      position: absolute
+      display: block
+      height: 3px
+      width: 23px
+      background-color: $active-color
+    span:before
+      transition: all 0.2s
+      content: ''
+      margin-top: -7px
+    span:after
+      transition: all 0.2s
+      content: ''
+      margin-top: 7px
+    &-active span
+      background-color: transparent
+      &:before
+        transform: rotate(135deg)
+        margin-top: 0
+        background-color: #f4f4f4
+      &:after
+        transform: rotate(-135deg)
+        margin-top: 0
+        background-color: #f4f4f4
+
+  .header-logo
+    display: inline-block
+    background: url(../img/logo_mobile.png) center no-repeat
+    width: 35px
+    height: 35px
+    margin-left: 30px
+    background-color: #ff9d00
+  .hidden-mobile
+    display: none
+  .contact-phone
+    border: none
+    padding: 0
+    a
+      font-family: Roboto
+      font-size: 14px
+      line-height: 17px
+    &s
+      flex-direction: column
+      margin-right: 10px
+  .mobile-strong
+    font-family: 'Roboto Black'
+  .header-contacts__button
+    padding: 10px
+    padding-right: 9px
+    &-mobile
+      display: block
+      background: url(../img/mobile_phone.png) center no-repeat
+      width: 14px
+      height: 13px
+      &:before
+        display: none
+  .menu-contacts
+    padding-top: 8px
+    padding-bottom: 10px
+    background-color: #f4f4f4
+  .main
+    padding-top: 45px
+    &-text
+      text-align: center
+      &-form
+        width: 100%
+        padding: 0
+        background-color: rgba(0,0,0,0)
+      &-title
+        padding: 0
+        font-family: 'Roboto Bold'
+        font-size: 22px
+        color: $active-color
+        line-height: 24px
+      &-subtitle
+        margin-top: 8px
+        font-family: Roboto
+        font-size: 18px
+        color: #ffffff
+  .form-title
+    margin-top: 37px
+    padding: 0
+    font-family: 'Roboto Light'
+    font-size: 15px
+    line-height: 18px
+    &-important
+      display: block
+      margin-top: 8px
+      padding: 0
+      line-height: 22px
+  .form-input
+    width: 100%
+    max-width: 350px
+    height: 47px
+    margin-bottom: 12px
+    text-align: center
+  .button-big
+    width: 80%
+    max-width: 280px
+    margin: 0
+    padding-left: 28px
+    padding-right: 29px
+    padding-top: 14px
+    padding-bottom: 14px
+    font-size: 15px
+    font-family: 'Roboto Regular'
+  .form-small
+    margin: 0
+    font-family: 'Roboto Light'
+    font-size: 14px
+    line-height: 30px
+  .overlay-post .popup
+    position: fixed
+    left: 5%
+    top: 50px
+    width: 90%
+    transform: none
+    &-title
+      display: block
+      margin: 0
+      width: 100%
+      min-height: 30px
+      background-color: #ff9d00
+      color: #ffffff
+      text-align: center
+      font-size: 21px
+      line-height: 71px
+      text-transform: uppercase
+    &-form
+      padding-left: 20px
+      padding-right: 20px
+    &-form-header
+      text-align: center
+  .overlay
+    position: fixed
+    display: none
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 3
+    background-color: rgba(0,0,0,0.4)
+    .popup
+      position: fixed
+      left: 5%
+      top: 50px
+      width: 90%
+      transform: none
+      &-close
+        position: absolute
+        top: -3px
+        right: 10px
+        font-size: 35px
+        font-family: 'Roboto Light'
+        color: #f3f3f3
+      &-title
+        display: block
+        margin: 0
+        width: 100%
+        min-height: 30px
+        background-color: #ff9d00
+        color: #ffffff
+        text-align: center
+        font-size: 21px
+        line-height: 71px
+        text-transform: uppercase
+      &-form
+        background: url(../img/modal-bg.png) 0 0 no-repeat
+        background-size: cover
+        padding: 20px 10px 20px 10px
+        color: #ffffff
+        &-header
+          padding: 0
+          color: #ffffff
+          font-size: 24px
+          line-height: 27px
+          text-align: center
+          span
+            display: block
+            margin-top: 10px
+            font-size: 18px
+        &__label
+          display: block
+          margin: 0
+          margin-top: 15px
+          font-size: 18px
+          font-family: 'Roboto Light'
+        &__note
+          margin-top: 5px
+          font-size: 14px
+        &__input
+          display: block
+          margin: auto
+          width: 90%
+          max-width: 300px
+          height: 56px
+          margin-top: 17px
+          margin-bottom: 15px
+          border-radius: 5px
+          text-align: center
+          font-size: 14px
+          font-family: 'Roboto Light'
+          color: #373737
+        &__btn
+          width: 70%
+          max-width: 250px
+          height: 56px
+          margin: 0
+          padding: 0
+          margin-left: 10px
+          background-color: #ff9d00
+          font-size: 18px
+          font-family: 'Roboto'
+  .numbers
+    margin-bottom: 30px
+    &-block
+      width: 100%
+      margin: 0
+      margin-bottom: 20px
+      &:nth-child(n+2)
+        margin-left: 0
+      &__title
+        font-size: 30px
+        sup
+          font-size: 18px
+      &__text
+        font-size: 16px
+  .button
+    margin-left: 5px
+  //ПРЕИМУЩЕСТВА
+  .features
+    padding-top: 45px
+    padding-bottom: 0
+    &-blocks
+      justify-content: center
+    &-block
+      display: flex
+      flex-basis: 60%
+      min-width: 300px
+      padding-left: 10px
+      margin-bottom: 10px
+  //КЛИЕНТЫ
+  .clients .col-6:nth-child(2n)
+    padding-left: 5px
+  .clients .col-6:nth-child(2n+1)
+    padding-right: 5px
+  .clients-block
+    position: relative
+    display: block
+    margin: auto
+    width: 143px
+    height: 87px
+    margin-bottom: 10px
+    min-height: 87px
+    img
+      display: block
+      margin: auto
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      max-width: 90%
+      max-height: 90%
+      filter: grayscale(0%)
+  .section-title::after
+    display: none
+
+  .products
+    padding-bottom: 20px
+    &-block__title-mobile
+      margin-top: -10px
+  // ПРОДУКЦИЯ
+  .production
+    padding-top: 20px
+    padding-bottom: 80px
+    text-align: center
+    .container
+      padding: 0
+    .row
+      margin: 0
+    &-text__title
+      width: 100%
+      margin: 0
+      padding: 0
+      margin-top: 18px
+      padding-top: 18px
+      padding-bottom: 15px
+      font-family: 'Roboto Bold'
+      font-size: 20px
+      line-height: 18px
+      text-transform: uppercase
+    &-text__descr
+      text-align: justify
+      text-align-last: center
+      margin-top: 15px
+      margin-bottom: 15px
+      padding-left: 15px
+      padding-right: 15px
+      font-size: 14px
+      font-weight: 300
+      line-height: 18px
+    &-text
+      padding: 0
+    &-slider
+      &-top
+        display: none
+      &-bottom
+        height: 350px
+        overflow-y: hidden
+        padding: 0
+        img
+          width: 100%
+          height: 350px
+          filter: none
+          margin: 0
+          padding: 0
+          object-fit: cover
+  .ln-hg
+    padding-top: 5px
+  .slider-arrow
+    top: 140px
+    height: 79px
+    &-right
+      background: $active-color url(../img/arrow-right-active.png) center no-repeat
+    &-left
+      background: $active-color url(../img/arrow-left-active.png) center no-repeat
+  //ОФФЕР
+  .offer
+    padding-top: 50px
+    padding-bottom: 40px
+    &-title
+      font-size: 20px
+      line-height: 26px
+    &-subtitle
+      font-size: 16px
+    &-form
+      width: 100%
+      &-label
+        font-size: 16px
+      .form-input
+        width: 50%
+        min-width: 280px
+      .button
+        display: block
+        width: 30%
+        min-width: 160px
+        margin: auto
+        margin-top: 10px
+      small
+        margin-top: 5px
+        font-size: 14px
+  
+  // ОТЗЫВЫ
+  .feedback
+    padding-top: 50px
+    padding-bottom: 70px
+    &-slider
+      margin: auto
+      min-width: 300px
+      max-width: 380px
+      &__item
+        margin: 0
+        padding: 0
+        padding-top: 20px
+        img
+          display: block
+          margin: auto
+          min-height: 250px
+          object-fit: cover
+    .section-title
+      line-height: 26px
+    &-mobile-left
+      left: 20px
+    &-mobile-right
+      right: 20px
+
+  .contacts
+    position: relative
+    &-block
+      position: absolute
+      top: 10%
+      background-color: #fff
+      padding-top: 33px
+      padding-bottom: 10px
+      padding-left: 60px
+      padding-right: 34px
+      color: #373737
+      font-family: 'Roboto Light'
+      font-size: 16px
+      line-height: 18px
+      a
+        color: #373737
+      &__cta
+        button
+          margin-left: 0
+          padding-top: 10px
+          padding-bottom: 10px
+          padding-left: 25px
+      &__title
+        display: block
+        font-family: Roboto
+        font-size: 18px
+        margin-top: 5px
+        margin-bottom: 8px
+      &__adress:before
+        content: url(../img/map1.png)
+        position: absolute
+        margin-left: -25px
+        margin-top: 2px
+      &__phone:before
+        content: url(../img/map2.png)
+        position: absolute
+        margin-left: -25px
+        margin-top: 2px
+      &__mail:before
+        content: url(../img/map3.png)
+        position: absolute
+        margin-left: -25px
+        margin-top: 2px
+      &__text
+        margin-bottom: 25px
+  .contacts-block
+    display: none
+  .contacts-block-mobile
+    display: block
+  .contacts
+    &-block-mobile
+      background-color: #fff
+      padding-top: 33px
+      padding-bottom: 10px
+      padding-left: 47px
+      padding-right: 47px
+      color: #373737
+      font-family: 'Roboto Light'
+      font-size: 14px
+      line-height: 18px
+      text-align: center
+      a
+        color: #373737
+      &__label
+        color: #313131
+        font-family: 'Roboto Bold'
+        font-size: 22px
+        line-height: 24px
+        text-transform: uppercase
+      &__cta
+        button
+          margin-top: -10px
+          margin-left: 0
+          padding-top: 10px
+          padding-bottom: 10px
+          padding-left: 25px
+      &__title
+        display: block
+        font-family: "Roboto Medium"
+        font-size: 18px
+        margin-top: 10px
+        margin-bottom: 8px
+      &__text
+        margin-bottom: 25px
+  .map
+    height: 432px
+    padding-left: 12px
+    padding-right: 12px
+    padding-bottom: 12px
+  .footer-text
+    font-size: 11px
+@media screen and (min-width:577px) and (max-width:767px)
+  .menu
+    display: none
+    &-contacts
+      padding-bottom: 15px
+      padding-top: 15px
+    &-item
+      padding-right: 20px
+      padding-left: 20px
+      margin-bottom: 5px
+      font-size: 26px
+      &:nth-child(2n)
+        border-right: none
+      &:nth-child(1)
+        margin-left: 50px
+        padding-right: 20px
+      &:nth-child(3)
+        margin-left: -19px
+        padding-left: 0
+        padding-right: 17px
+      &:nth-child(5)
+        margin-left: 38px
+        padding-right: 17px
+      &:nth-child(7)
+        margin-left: -23px
+        padding-right: 17px
+  .menu-mob
+    transition: all 1s
+    display: none
+    width: 295px
+    height: 100%
+    margin: auto
+    padding-top: 5px
+  .menu-mobile
+    display: flex
+    animation-name: move
+    animation-duration: 1s
+  .burger-div
+    position: fixed
+    top: 33px
+    margin-left: 20px
+    z-index: 10
+  .menu-burger
+    position: relative
+    display: inline-block
+    width: 35px
+    height: 35px
+    padding-top: 5px
+    margin-left: -10%
+    span, span:before, span:after
+      position: absolute
+      display: block
+      height: 4px
+      width: 30px
+      background-color: $active-color
+    span:before
+      transition: all 0.2s
+      content: ''
+      margin-top: -10px
+    span:after
+      transition: all 0.2s
+      content: ''
+      margin-top: 10px
+    &-active span
+      background-color: transparent
+      &:before
+        transform: rotate(135deg)
+        margin-top: 0
+        background-color: #f4f4f4
+      &:after
+        transform: rotate(-135deg)
+        margin-top: 0
+        background-color: #f4f4f4
+  .header-logo
+    display: inline-block
+    margin-left: 20px
+  .header-contacts
+    margin-top: 10px
+  .hidden-mobile
+    display: none
+  .contact-phone
+    border: none
+    padding: 0
+    a
+      font-family: Roboto
+      font-size: 18px
+      line-height: 22px
+    &s
+      flex-direction: column
+  .mobile-strong
+    font-family: 'Roboto Black'
+  .header-contacts__button
+    padding: 13px 15px
+    &-mobile
+      display: block
+      background: url(../img/icon1.png) center no-repeat
+      width: 20px
+      height: 20px
+  .menu-contacts
+    padding-top: 8px
+    padding-bottom: 8px
+  .main
+    padding-top: 45px
+    &-text
+      text-align: center
+      &-form
+        width: 100%
+        padding: 0
+        background-color: transparent
+      &-title
+        padding: 0
+        font-family: 'Roboto Bold'
+        font-size: 24px
+        color: $active-color
+        line-height: 24px
+      &-subtitle
+        margin-top: 15px
+        font-family: Roboto
+        font-size: 22px
+        color: #ffffff
+  .form-title
+    margin-top: 45px
+    margin-bottom: 50px
+    padding: 0
+    font-family: 'Roboto Light'
+    font-size: 18px
+    line-height: 24px
+    &-important
+      display: block
+      margin-top: 20px
+      padding: 0
+      line-height: 22px
+  .form-input
+    width: 60%
+    max-width: 350px
+    height: 52px
+    margin-bottom: 12px
+    text-align: center
+  .button-big
+    width: 37%
+    max-width: 280px
+    margin: 0
+    margin-left: 2%
+    padding-left: 28px
+    padding-right: 29px
+    padding-top: 13px
+    padding-bottom: 15px
+    font-size: 15px
+  .form-small
+    margin: 0
+    font-size: 16px
+  .overlay-post
+    .popup
+      position: fixed
+      left: 5%
+      top: 50px
+      width: 90%
+      transform: none
+      &-close
+        position: absolute
+        top: -3px
+        right: 10px
+        font-size: 35px
+        font-family: 'Roboto Light'
+        color: #f3f3f3
+  .overlay
+    position: fixed
+    display: none
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 3
+    background-color: rgba(0,0,0,0.4)
+    .popup
+      position: fixed
+      left: 5%
+      top: 50px
+      width: 90%
+      transform: none
+      &-close
+        position: absolute
+        top: -3px
+        right: 10px
+        font-size: 35px
+        font-family: 'Roboto Light'
+        color: #f3f3f3
+      &-title
+        display: block
+        margin: 0
+        width: 100%
+        min-height: 30px
+        background-color: #ff9d00
+        color: #ffffff
+        text-align: center
+        font-size: 21px
+        line-height: 71px
+        text-transform: uppercase
+      &-form
+        background: url(../img/modal-bg.png) 0 0 no-repeat
+        background-size: cover
+        padding: 20px 10px 20px 10px
+        color: #ffffff
+        &-header
+          padding: 0
+          color: #ffffff
+          font-size: 24px
+          line-height: 27px
+          text-align: center
+          span
+            display: block
+            margin-top: 10px
+            font-size: 18px
+        &__label
+          display: block
+          margin: 0
+          margin-top: 15px
+          font-size: 18px
+          font-family: 'Roboto Light'
+        &__note
+          margin-top: 5px
+          font-size: 14px
+        &__input
+          display: block
+          margin: auto
+          width: 90%
+          max-width: 300px
+          height: 56px
+          margin-top: 17px
+          margin-bottom: 15px
+          border-radius: 5px
+          text-align: center
+          font-size: 14px
+          font-family: 'Roboto Light'
+          color: #373737
+        &__btn
+          width: 70%
+          max-width: 250px
+          height: 56px
+          margin: 0
+          padding: 0
+          margin-left: 10px
+          background-color: #ff9d00
+          font-size: 18px
+          font-family: 'Roboto'
+  .numbers
+    margin-bottom: 30px
+    &-block
+      width: 100%
+      margin: 0
+      margin-bottom: 20px
+      &:nth-child(n+2)
+        margin-left: 0
+      &__title
+        font-size: 30px
+        sup
+          font-size: 18px
+      &__text
+        font-size: 16px
+  //ПРЕИМУЩЕСТВА
+  .features
+    padding-top: 45px
+    padding-bottom: 0
+    &-block
+      flex-basis: 65%
+      margin: auto
+      margin-bottom: 10px
+      padding-left: 5px
+      padding-right: 35px
+      &__img
+        flex-basis: 80%
+        justify-content: center
+  //КЛИЕНТЫ
+  .clients-block
+    width: 240px
+    img
+      filter: grayscale(0%)
+
+  .products
+    padding-bottom: 20px
+    &-block__title-mobile
+      margin-top: -10px
+  // ПРОДУКЦИЯ
+  .production
+    padding-top: 20px
+    padding-bottom: 50px
+    text-align: center
+    &-text__title
+      margin: 0
+      padding: 0
+      margin-top: 18px
+      padding-top: 18px
+      padding-bottom: 15px
+      font-family: 'Roboto Bold'
+      font-size: 20px
+      line-height: 18px
+      text-transform: uppercase
+    &-text__descr
+      text-align-last: center
+      margin-top: 15px
+      margin-bottom: 15px
+      font-size: 16px
+      font-weight: 300
+      line-height: 18px
+    &-slider
+      &-top
+        display: none
+      &-bottom
+        height: 350px
+        overflow-y: hidden
+        padding: 0
+        img
+          width: 100%
+          height: 350px
+          filter: none
+          margin: 0
+          padding: 0
+  .ln-hg
+    padding-top: 5px
+  .slider-arrow
+    top: 140px
+    height: 79px
+    &-right
+      background: $active-color url(../img/arrow-right-active.png) center no-repeat
+    &-left
+      background: $active-color url(../img/arrow-left-active.png) center no-repeat
+  // ОТЗЫВЫ
+  .feedback
+    padding-top: 50px
+    padding-bottom: 60px
+    &-slider
+      margin: auto
+      max-width: 380px
+      &__item
+        height: 360px
+        img
+          display: block
+          margin: auto
+          object-fit: cover
+    .section-title
+      line-height: 26px
+    &-mobile-left
+      left: 20px
+    &-mobile-right
+      right: 20px
+  .contacts-block
+    display: none
+  .contacts-block-mobile
+    display: block
+  .contacts
+    &-block-mobile
+      background-color: #fff
+      padding-top: 33px
+      padding-bottom: 10px
+      padding-left: 47px
+      padding-right: 47px
+      color: #373737
+      font-family: 'Roboto Light'
+      font-size: 14px
+      line-height: 18px
+      text-align: center
+      a
+        color: #373737
+      &__label
+        color: #313131
+        font-family: 'Roboto Bold'
+        font-size: 22px
+        line-height: 24px
+        text-transform: uppercase
+      &__cta
+        button
+          margin-top: -10px
+          margin-left: 0
+          padding-top: 10px
+          padding-bottom: 10px
+          padding-left: 25px
+      &__title
+        display: block
+        font-family: "Roboto Medium"
+        font-size: 18px
+        margin-top: 10px
+        margin-bottom: 8px
+      &__text
+        margin-bottom: 25px
+  .map
+    height: 432px
+    padding-left: 12px
+    padding-right: 12px
+    padding-bottom: 12px
+  .footer-text
+    font-size: 11px
+
+@media screen and (min-width:768px) and (max-width:991px)
+  .menu
+    display: none
+    &-contacts
+      padding-bottom: 15px
+      padding-top: 15px
+    &-item
+      padding-right: 20px
+      padding-left: 20px
+      margin-bottom: 5px
+      font-size: 28px
+      &:nth-child(2n)
+        border-right: none
+      &:nth-child(1)
+        margin-left: 50px
+        padding-right: 20px
+      &:nth-child(3)
+        margin-left: -19px
+        padding-left: 0
+        padding-right: 17px
+      &:nth-child(5)
+        margin-left: 38px
+        padding-right: 17px
+      &:nth-child(7)
+        margin-left: -23px
+        padding-right: 17px
+  .menu-mob
+    transition: all 1s
+    display: none
+    width: 295px
+    height: 100%
+    margin: auto
+    padding-top: 5px
+  .menu-mobile
+    display: flex
+    animation-name: move
+    animation-duration: 1s
+  .burger-div
+    position: fixed
+    top: 40px
+    margin-left: 20px
+    z-index: 10
+  .menu-burger
+    position: relative
+    display: inline-block
+    width: 35px
+    height: 35px
+    padding-top: 5px
+    margin-left: -10%
+    span, span:before, span:after
+      position: absolute
+      display: block
+      height: 4px
+      width: 30px
+      background-color: $active-color
+    span:before
+      transition: all 0.2s
+      content: ''
+      margin-top: -10px
+    span:after
+      transition: all 0.2s
+      content: ''
+      margin-top: 10px
+    &-active span
+      background-color: transparent
+      &:before
+        transform: rotate(135deg)
+        margin-top: 0
+        background-color: #f4f4f4
+      &:after
+        transform: rotate(-135deg)
+        margin-top: 0
+        background-color: #f4f4f4
+  .header-logo
+    display: inline-block
+    margin-left: 20px
+  .header-contacts
+    margin-top: 10px
+  .hidden-mobile
+    display: none
+  .contact-phone a
+    font-family: 'Roboto Medium'
+    font-size: 20px
+    line-height: 22px
+  .header-contacts__button
+    padding: 13px 20px
+    &-mobile
+      display: block
+      background: url(../img/icon1.png) center no-repeat
+      width: 20px
+      height: 20px
+  .main
+    padding-top: 50px
+    text-align: center
+    &-text-title
+      font-size: 38px
+      line-height: 40px
+    &-text-form
+      width: 600px
+      height: 350px
+      margin: auto
+      padding-left: 0
+  .form
+    width: 100%
+    padding: 0
+    margin-top: 16px
+    margin-bottom: 5px
+    &-title
+      padding-right: 30px
+      font-size: 20px
+      line-height: 30px
+      font-family: "Roboto Light"
+      &-important
+        display: block
+        padding: 0
+        margin-top: 10px
+    &-input
+      width: 80%
+      max-width: 450px
+      margin: 0
+      padding: 17px
+      padding-bottom: 18px
+      border-radius: 4px
+      text-align: center
+      color: #373737
+      font-size: 14px
+  .button-big
+    width: 80%
+    max-width: 280px
+    margin: 0
+    margin-top: 20px
+    padding-top: 20px
+    padding-bottom: 20px
+    font-size: 16px
+  .form-small
+    margin: 0
+    font-size: 15px
+  .overlay .popup-close
+    top: -3px
+    right: 10px
+    font-size: 38px
+  .numbers
+    margin-bottom: 30px
+    &-block
+      width: 30%
+      margin-left: 1%
+      &:nth-child(n+2)
+        margin-left: 0
+      &:nth-child(2)
+        width: 33%
+        margin-left: 3%
+      &__title
+        font-size: 30px
+        sup
+          font-size: 18px
+      &__text
+        font-size: 16px
+  .product-block__img
+    height: 210px
+  .md-buttons
+    margin-top: 44px
+
+  //КЛИЕНТЫ
+  .clients-block img
+    filter: grayscale(0%)
+  //ПРЕИМУЩЕСТВА
+  .features
+    padding-top: 45px
+    padding-bottom: 0
+    &-block
+      display: flex
+      flex-basis: 48%
+      padding-left: 20px
+  // ПРОДУКЦИЯ
+  .production
+    padding-top: 70px
+    padding-bottom: 80px
+    &-text__title
+      margin-top: 15px
+      padding-top: 15px
+      padding-left: 20px
+      padding-bottom: 15px
+      font-size: 24px
+    &-text__descr
+      margin-top: 10px
+      font-size: 14px
+      line-height: 18px
+    &-slider
+      &-top
+        height: 250px
+        overflow-y: hidden
+      &-bottom
+        margin-top: 10px
+        padding-left: 23px
+        padding-right: 23px
+        img
+          outline: none
+          height: 65px
+          margin-left: 3px
+          margin-right: 3px
+  .ln-hg
+    padding-top: 5px
+  // ОТЗЫВЫ
+  .feedback
+    padding-top: 50px
+    padding-bottom: 60px
+    &-slider
+      &__item
+        height: 280px
+
+@media screen and (min-width: 992px) and (max-width: 1200px)
+  .main
+    &-img
+      margin-left: -20px
+      &::before
+        margin-top: -35px
+        margin-left: 10px
+
